@@ -11,7 +11,10 @@ Generate private/public key pair in .ssh:
 list new keyfiles:
     ls -l
     
-list contents of public key so you can paste into server public key
+(Launch your new server.  During configuration you will probably
+be asked for a public key contents.  You can use this command to
+list the contents of your public key. You can select the output
+from this command to copy/paste as needed):
     cat id_rsa.pub
 
 (2) Log-in to server (replace IP address with your server IP):
