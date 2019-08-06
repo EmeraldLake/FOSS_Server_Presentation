@@ -1,3 +1,4 @@
+Commands are indented...
 (1) Public-Private key commands:
     cd ~/.ssh
     
@@ -11,16 +12,16 @@ Generate private/public key pair in .ssh:
 list new keyfiles:
     ls -l
     
-(Launch your new server.  During configuration you will probably
+(2) (Launch your new server.  During configuration you will probably
 be asked for a public key contents.  You can use this command to
 list the contents of your public key. You can select the output
 from this command to copy/paste as needed):
     cat id_rsa.pub
 
-(2) Log-in to server (replace IP address with your server IP):
+(3) Log-in to server (replace IP address with your server IP):
     ssh root@165.227.207.150
 
-(3) Create user on server:
+(4) Create user on server:
     adduser althea
     
 Give this new user the ability to sudo (be like root):
@@ -37,7 +38,7 @@ Login as new user you created (replace IP address with your server IP,
 and althea with your user):
     ssh althea@165.227.207.150
 
-(4) Setup firewall:
+(5) Setup firewall:
 
 Check if firewall installed/running:
     sudo ufw status
@@ -51,7 +52,7 @@ Tell firewall to allow ssh (secure shell) connections:
 Check newly configured firewall's status:
     sudo ufw status
 
-(5) Updating/Installing server software
+(6) Updating/Installing server software
 apt - advanced package tool
 
 First always update software list:
@@ -63,7 +64,7 @@ You can see what can be updated with this command:
 Install updates:
     sudo apt upgrade
 
-(6) Install Apache Web Server
+(7) Install Apache Web Server
 
 If you haven't done so recently, upgrade server software package list:
     sudo apt update
@@ -79,6 +80,7 @@ Look at new firewall rules:
     
 Apply a don't show server name configuration:
     sudo nano /etc/apache2/conf-enabled/security.conf
+
 Edit this config file and change server tokens and server signature to:
 ServerTokens Prod
 ServerSignature Off
@@ -90,7 +92,7 @@ Restart Apache to read these new configs:
 Check Apache status:
     sudo systemctl status apache2
 
-(7) Disable root login:
+(8) Disable root login:
 
     sudo nano /etc/ssh/sshd_config
     
